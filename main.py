@@ -1,6 +1,5 @@
 from blitzcord import BlitzCord
-
-token = '_your_discord_bot_token_here'
+from keys import token
 
 client = BlitzCord()
 client.run(token)

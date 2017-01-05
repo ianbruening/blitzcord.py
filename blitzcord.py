@@ -1,6 +1,7 @@
 import discord
 import asyncio
 from cassiopeia import riotapi, baseriotapi
+from keys import riot_api_key
 
 class BlitzCord(discord.Client):
 
@@ -9,7 +10,7 @@ class BlitzCord(discord.Client):
 
 	async def on_ready(self):
 		riotapi.set_region('NA')
-		riotapi.set_api_key('_your_api_key_here')
+		riotapi.set_api_key(riot_api_key)
 		self.champions = baseriotapi.get_champions()
 		for key in self.champions.data:
 			self.cIDs[str(self.champions.data[key].id)] = self.champions.data[key].name
